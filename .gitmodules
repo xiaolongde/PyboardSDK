@@ -1,0 +1,3 @@
+[submodule "MCU-SDK"]
+	path = MCU-SDK
+	url = https://github.com/xiaolongde/MCU-SDK.git
