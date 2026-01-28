@@ -59,8 +59,15 @@ typedef struct {
 
 /* Exported variables --------------------------------------------------------*/
 extern UART_Echo_HandleTypeDef g_uart_echo;
+extern UART_Echo_HandleTypeDef * const g_uart_echo_ptr;
 
 /* Exported functions --------------------------------------------------------*/
+/**
+  * @brief  Get UART Echo handle (for debugging)
+  * @retval Pointer to g_uart_echo
+  */
+UART_Echo_HandleTypeDef* UART_Echo_GetHandle(void);
+
 /**
   * @brief  Initialize UART Echo module
   * @retval HAL status

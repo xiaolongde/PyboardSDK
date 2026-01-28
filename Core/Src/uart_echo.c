@@ -11,7 +11,16 @@
 #include <string.h>
 
 /* Private variables ---------------------------------------------------------*/
-UART_Echo_HandleTypeDef g_uart_echo = {0};
+UART_Echo_HandleTypeDef g_uart_echo __attribute__((used)) = {0};
+
+/* Debug helper - pointer to make variable accessible in debugger */
+UART_Echo_HandleTypeDef * const g_uart_echo_ptr __attribute__((used)) = &g_uart_echo;
+
+/* Debug helper function */
+UART_Echo_HandleTypeDef* UART_Echo_GetHandle(void)
+{
+    return &g_uart_echo;
+}
 
 /* Private function prototypes -----------------------------------------------*/
 static void UART_Echo_GPIO_Init(void);

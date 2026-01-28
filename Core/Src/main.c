@@ -42,7 +42,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+/* Debug helper - keep reference to prevent linker optimization */
+extern UART_Echo_HandleTypeDef * const g_uart_echo_ptr;
+static void* debug_uart_ptr __attribute__((used)) = (void*)&g_uart_echo_ptr;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
