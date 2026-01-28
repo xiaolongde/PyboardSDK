@@ -1,0 +1,9 @@
+// JLink 烧录脚本
+// 使用: JLink.exe -device STM32F405VG -if SWD -speed 4000 -autoconnect 1 -CommandFile flash.jlink
+
+r
+h
+loadfile build/PyboardSDK.elf
+r
+g
+exit

@@ -22,6 +22,7 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "uart_echo.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -199,5 +200,29 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /* USER CODE BEGIN 1 */
+
+/**
+  * @brief This function handles USART1 global interrupt.
+  */
+void USART1_IRQHandler(void)
+{
+    UART_Echo_IRQHandler();
+}
+
+/**
+  * @brief This function handles DMA2 stream7 global interrupt (USART1 TX).
+  */
+void DMA2_Stream7_IRQHandler(void)
+{
+    UART_Echo_DMA_TX_IRQHandler();
+}
+
+/**
+  * @brief This function handles DMA2 stream5 global interrupt (USART1 RX).
+  */
+void DMA2_Stream5_IRQHandler(void)
+{
+    UART_Echo_DMA_RX_IRQHandler();
+}
 
 /* USER CODE END 1 */

@@ -92,3 +92,18 @@ $RECYCLE.BIN/
 # 临时文件
 *.tmp
 *.temp
+
+# =====================================================
+# CMake 构建产物
+# =====================================================
+
+# 构建目录
+build/
+cmake-build-*/
+
+# CMake 生成的文件
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json

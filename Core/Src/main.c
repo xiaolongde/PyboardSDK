@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "uart_echo.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -85,7 +85,8 @@ int main(void)
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
-
+  /* Initialize UART Echo (USART1, PB6/PB7, 921600 baud, DMA) */
+  UART_Echo_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -95,6 +96,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    /* Process UART Echo - echoes received data back */
+    UART_Echo_Process();
   }
   /* USER CODE END 3 */
 }
